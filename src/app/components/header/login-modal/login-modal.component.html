@@ -1,0 +1,91 @@
+<button
+  class="btn btn-outline-warning"
+  value="Sign In"
+  type="button"
+  data-bs-toggle="modal"
+  data-bs-target="#loginModal"
+>
+  <fa-icon [icon]="signIn"> </fa-icon>
+</button>
+
+<div
+  class="modal fade"
+  id="loginModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div
+      class="modal-content"
+      [ngStyle]="{
+        'background-image': 'url(' + background + ')',
+        'background-size': '100% 100%',
+        'background-attachment': 'fixed'
+      }"
+    >
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">
+          <strong>Login</strong>
+        </h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+
+      <form [formGroup]="form" (ngSubmit)="onEnviar($event)" action="#">
+        <div class="modal-body d-flex row justify-content-betwen">
+          <div>
+            <label for="email"
+              ><p><strong>Email:</strong></p></label
+            >
+            <input
+              type="mail"
+              formControlName="email"
+              placeholder="Email"
+              required
+            />
+          </div>
+
+          <div *ngIf="Mail?.errors && Mail?.touched">
+            <p *ngIf="Mail?.hasError('required')" class="error">
+              El email es requerido.
+            </p>
+            <p *ngIf="Mail?.hasError('email')" class="error">
+              El formato del email debe ser válido.
+            </p>
+          </div>
+
+          <div>
+            <label for="password" class="form-label"
+              ><p><strong>Contraseña:</strong></p></label
+            >
+            <input
+              type="password"
+              formControlName="password"
+              placeholder="Contraseña"
+              required
+            />
+          </div>
+
+          <div *ngIf="Password?.errors && Password?.touched">
+            <p *ngIf="Password?.hasError('required')" class="error">
+              El password es requerido.
+            </p>
+            <p *ngIf="Password?.errors?.['minlength']" class="error">
+              El password debe ser de 8 o más caracteres.
+            </p>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-outline-warning">
+            <strong>Sign In</strong>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

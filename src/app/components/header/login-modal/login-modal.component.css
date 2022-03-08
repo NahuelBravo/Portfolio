@@ -1,0 +1,10 @@
+.modal-content{
+    color: var(--font-color-white);
+}
+
+p{
+    margin: 0;
+}
+input{
+    margin-bottom: 0.8em;
+}

@@ -1,0 +1,36 @@
+header{
+    box-sizing: content-box;
+    margin: 0;
+    padding: 0;
+
+    background-color: var(--background-secondary);
+
+    color: var(--font-color-white);
+    margin-bottom: 3.5em;
+}
+
+#arg-prog-logo{
+    width: 3em;
+    height: 2em;
+    margin-left: 1em;
+    font-size: 3em;
+}
+
+#arg-prog-logo{
+    width: 3em;
+    height: 2em;
+    margin-left: 1em;
+}
+
+.links{
+    padding: 0 0.5em;
+}
+
+a{
+    color: var(--font-color-white);
+    text-decoration: none;
+}
+
+app-social-media{
+    font-size: 3em;
+}

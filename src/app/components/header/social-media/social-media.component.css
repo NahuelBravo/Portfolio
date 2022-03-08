@@ -1,0 +1,8 @@
+.links{
+    padding: 0 0.5em;
+}
+
+a{
+    color: var(--font-color-white);
+    text-decoration: none;
+}
