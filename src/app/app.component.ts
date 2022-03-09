@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'PortfolioAngular';
+  background = "assets/Img/background-image.jpg";
 }

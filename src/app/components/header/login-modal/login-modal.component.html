@@ -1,11 +1,12 @@
 <button
   class="btn btn-outline-warning"
-  value="Sign In"
+  
   type="button"
   data-bs-toggle="modal"
   data-bs-target="#loginModal"
 >
-  <fa-icon [icon]="signIn"> </fa-icon>
+  <strong>Sign In </strong>
+  <fa-icon [icon]="signIn"></fa-icon>
 </button>
 
 <div
@@ -39,9 +40,9 @@
       <form [formGroup]="form" (ngSubmit)="onEnviar($event)" action="#">
         <div class="modal-body d-flex row justify-content-betwen">
           <div>
-            <label for="email"
-              ><p><strong>Email:</strong></p></label
-            >
+            <label for="email">
+              <strong>Email:</strong>
+            </label>
             <input
               type="mail"
               formControlName="email"
@@ -60,9 +61,9 @@
           </div>
 
           <div>
-            <label for="password" class="form-label"
-              ><p><strong>Contraseña:</strong></p></label
-            >
+            <label for="password" class="form-label">
+              <strong>Contraseña:</strong>
+            </label>
             <input
               type="password"
               formControlName="password"
