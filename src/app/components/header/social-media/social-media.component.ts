@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GeneralServiceService } from 'src/app/services/general-service.service';
 
-import { faLinkedinIn,faGithubSquare } from '@fortawesome/free-brands-svg-icons';
+import { faLinkedin,faGithubSquare } from '@fortawesome/free-brands-svg-icons';
 
 @Component({
   selector: 'app-social-media',
@@ -10,7 +10,7 @@ import { faLinkedinIn,faGithubSquare } from '@fortawesome/free-brands-svg-icons'
 })
 export class SocialMediaComponent implements OnInit {
 
-  linkedin = faLinkedinIn;
+  linkedin = faLinkedin;
   gitHub = faGithubSquare;
 
   links: any;

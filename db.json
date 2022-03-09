@@ -1,49 +1,52 @@
 {
-	"header": {
-		"gitHub": "https://github.com/NahuelBravo",
-		"linkedin": "#",
-		"argProgLogo": "assets/Img/APLogo-20-20.png"
-	},
-	"about": {
-    "profileImg": "assets/Img/blank-profile-picture.png",
-		"name": "Eric Nahuel Bravo",
-		"position": "FullSack Developer Jr.",
-		"text": "Lorem ipsum dolor sit amet, his cibo clita no, nec aliquam patrioque mediocritatem ne. Perfecto repudiare pertinacia sea ut, ei liber consequat vis. Ex dicam molestie scripserit his, probo soluta reprimique vel ut, sit latine laboramus constituam ea. Quaeque percipitur an quo, ea qui option liberavisse. Ius ne putant consetetur. Nostrud adipisci te nec. Vis ullum dictas mediocritatem et."
-	},
-	"education": [
-		{
+  "header": {
+    "gitHub": "https://github.com/NahuelBravo",
+    "linkedin": "#",
+    "argProgLogo": "assets/Img/APLogo-20-20.png"
+  },
+  "about": [
+    {
       "id": 1,
-			"school": "C.P.E.M. N° 80",
-			"img": "assets/Img/C.P.E.M-80.jpg",
-			"title": "Tecnico en Gestion de Proyectos Audiovisuales",
-			"start": "2017",
-			"end": "2019"
-		},
+      "profileImg": "assets/Img/blank-profile-picture.png",
+      "name": "Eric Nahuel Bravo",
+      "position": "FullSack Developer Jr.",
+      "text": "Lorem ipsum dolor sit amet, his cibo clita no, nec aliquam patrioque mediocritatem ne. Perfecto repudiare pertinacia sea ut, ei liber consequat vis. Ex dicam molestie scripserit his, probo soluta reprimique vel ut, sit latine laboramus constituam ea. Quaeque percipitur an quo, ea qui option liberavisse. Ius ne putant consetetur. Nostrud adipisci te nec. Vis ullum dictas mediocritatem et."
+	}
+  ],
+  "education": [
+    {
+      "id": 1,
+      "school": "C.P.E.M. N° 80",
+      "img": "assets/Img/C.P.E.M-80.jpg",
+      "title": "Tecnico en Gestion de Proyectos Audiovisuales",
+      "start": "2017",
+      "end": "2019"
+    },
     {
       "id": 2,
-			"school": "C.P.E.M. N° 80",
-			"img": "assets/Img/C.P.E.M-80.jpg",
-			"title": "Tecnico en Gestion de Proyectos Audiovisuales",
-			"start": "2017",
-			"end": "2019"
-		}
-	],
-	"experience": [
-		{
+      "school": "C.P.E.M. N° 80",
+      "img": "assets/Img/C.P.E.M-80.jpg",
+      "title": "Tecnico en Gestion de Proyectos Audiovisuales",
+      "start": "2017",
+      "end": "2019"
+    }
+  ],
+  "experience": [
+    {
       "id": 1,
-			"companie": "C.P.E.M. N° 80",
-			"img": "assets/Img/C.P.E.M-80.jpg",
-			"job": "FullSack Developer Jr.",
-			"start": "2017",
-			"end": "2019"
-		},
-		{
+      "companie": "C.P.E.M. N° 80",
+      "img": "assets/Img/C.P.E.M-80.jpg",
+      "job": "FullSack Developer Jr.",
+      "start": "2017",
+      "end": "2019"
+    },
+    {
       "id": 2,
-			"companie": "C.P.E.M. N° 80",
-			"img": "assets/Img/C.P.E.M-80.jpg",
-			"job": "FullSack Developer Jr.",
-			"start": "2017",
-			"end": "2019"
-		}
-	]
+      "companie": "C.P.E.M. N° 80",
+      "img": "assets/Img/C.P.E.M-80.jpg",
+      "job": "FullSack Developer Jr.",
+      "start": "2017",
+      "end": "2019"
+    }
+  ]
 }

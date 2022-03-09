@@ -1,0 +1,39 @@
+#container{
+    width: 70vw;
+    background-color: var(--background-primary);
+    padding: 1em;
+    color: var(--font-color-white);
+    border-radius: 0.5em;
+    margin-bottom: 3.5em;
+}
+
+app-edit-button{
+    margin: 0;
+    padding: 0;
+}
+
+#img-profile{
+    width: 15em;
+    border-radius: 50vw;
+}
+
+
+#name{
+    font-size: 3em;
+    color: var(--font-color-yellow);
+}
+
+#position{
+    font-size: 1.8em;
+    color: var(--font-color-pink);
+    margin: 0;
+}
+
+#about-container{
+    margin: 1em 0 0.5em 0;
+}
+
+#about-text{
+    font-size: 1.1em;
+    word-wrap: break-word;
+}

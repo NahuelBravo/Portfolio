@@ -28,15 +28,28 @@ export class GeneralServiceService {
 
   constructor(private http:HttpClient) { }
 
+  /* Header */
   getHeader(): Observable<Header>{
     return this.http.get<Header>(this.urlHeader);
   }
-  getAbout(): Observable<About>{
-    return this.http.get<About>(this.urlAbout);
+
+  /* About */
+  getAbout(): Observable<About[]>{
+    return this.http.get<About[]>(this.urlAbout);
   }
+
+  editAbout(about: About): Observable<About[]>{
+    console.log("hola soy el servicio")
+    const url =`${this.urlAbout}/${about.id}`
+    return this.http.put<About[]>(url, about, httpOptions)
+  }
+
+  /* Education */
   getEducation(): Observable<Education[]>{
     return this.http.get<Education[]>(this.urlEducation);
   }
+
+  /* Experience */
   getExperience(): Observable<Experience[]>{
     return this.http.get<Experience[]>(this.urlExperience);
   }

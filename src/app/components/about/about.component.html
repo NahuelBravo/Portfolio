@@ -1,1 +1,36 @@
-<p>about works!</p>
+<div
+  id="container"
+  class="row d-flex align-items-center justify-content-between"
+  *ngFor="let about of about"
+>
+
+<div class="col-12 d-flex justify-content-end">
+  <app-modal-about (editAbout)="editAbout($event)"></app-modal-about>
+</div>
+
+  <div class="row col-12 col-md-3 d-flex justify-content-center">
+    <div class="col-12 d-flex justify-content-center">
+      <img id="img-profile" [src]="about.profileImg" class="img-fluid" />
+    </div>
+  </div>
+
+  <div
+    class="col-12 col-md-9 d-flex justify-content-center justify-content-md-start"
+  >
+    <div>
+      <div class="col-12">
+        <h2 id="name">{{ about.name }}</h2>
+      </div>
+      <div class="d-flex col-12 align-items-center">
+        <p id="position">{{ about.position }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-12 d-flex justify-content-center align-items-center">
+    <div id="about-container">
+      <p id="about-text" >{{about.text}}</p>
+    </div>
+  </div>
+</div>
+

@@ -11,6 +11,8 @@ import { AboutComponent } from './components/about/about.component';
 import { HeaderComponent } from './components/header/header.component';
 import { SocialMediaComponent } from './components/header/social-media/social-media.component';
 import { LoginModalComponent } from './components/header/login-modal/login-modal.component';
+import { ModalAboutComponent } from './components/about/modal-about/modal-about.component';
+import { EditButtonComponent } from './components/buttons/edit-button/edit-button.component';
 
 
 @NgModule({
@@ -20,6 +22,8 @@ import { LoginModalComponent } from './components/header/login-modal/login-modal
     HeaderComponent,
     SocialMediaComponent,
     LoginModalComponent,
+    ModalAboutComponent,
+    EditButtonComponent,
   ],
   imports: [
     BrowserModule,
