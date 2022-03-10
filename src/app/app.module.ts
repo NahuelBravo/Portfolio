@@ -13,6 +13,10 @@ import { SocialMediaComponent } from './components/header/social-media/social-me
 import { LoginModalComponent } from './components/header/login-modal/login-modal.component';
 import { ModalAboutComponent } from './components/about/modal-about/modal-about.component';
 import { EditButtonComponent } from './components/buttons/edit-button/edit-button.component';
+import { EducationComponent } from './components/education/education.component';
+import { EdCardComponent } from './components/education/ed-card/ed-card.component';
+import { EdModalComponent } from './components/education/ed-modal/ed-modal.component';
+import { NavButtonsComponent } from './components/buttons/nav-buttons/nav-buttons.component';
 
 
 @NgModule({
@@ -24,6 +28,10 @@ import { EditButtonComponent } from './components/buttons/edit-button/edit-butto
     LoginModalComponent,
     ModalAboutComponent,
     EditButtonComponent,
+    EducationComponent,
+    EdCardComponent,
+    EdModalComponent,
+    NavButtonsComponent,
   ],
   imports: [
     BrowserModule,

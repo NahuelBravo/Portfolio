@@ -1,0 +1,11 @@
+nav{
+    background-color: var(--background-secondary);
+    margin: 0;
+    padding: 0;
+    height: 5em;
+}
+
+a{ 
+    text-decoration: none;
+    color: var(--font-color-yellow);
+}
