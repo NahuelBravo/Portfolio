@@ -18,12 +18,18 @@ import { EdCardComponent } from './components/education/ed-card/ed-card.componen
 import { EdModalComponent } from './components/education/ed-modal/ed-modal.component'
 import { DeleteButtonComponent } from './components/buttons/delete-button/delete-button.component';
 import { EdModal2Component } from './components/education/ed-modal2/ed-modal2.component';
-//*import { NavButtonsComponent } from './components/buttons/nav-buttons/nav-buttons.component';
+import { NavButtonsComponent } from './components/buttons/nav-buttons/nav-buttons.component';
 
 //* icons
 import { faLinkedin as faLinkedin ,faGithubSquare as faGithubSquare  } from '@fortawesome/free-brands-svg-icons';
 import { faSignInAlt as faSignInAlt} from '@fortawesome/free-solid-svg-icons';
 import { AddButtonComponent } from './components/buttons/add-button/add-button.component';
+import { ExperienceComponent } from './components/experience/experience.component';
+import { ExpCardComponent } from './components/experience/exp-card/exp-card.component';
+import { ExpModalComponent } from './components/experience/exp-modal/exp-modal.component';
+import { ExpModal2Component } from './components/experience/exp-modal2/exp-modal2.component';
+import { SkillsComponent } from './components/skills/skills.component';
+import { ProyectsComponent } from './components/proyects/proyects.component';
 
 
 @NgModule({
@@ -41,7 +47,13 @@ import { AddButtonComponent } from './components/buttons/add-button/add-button.c
     DeleteButtonComponent,
     EdModal2Component,
     AddButtonComponent,
-   //* NavButtonsComponent,
+    ExperienceComponent,
+    ExpCardComponent,
+    ExpModalComponent,
+    ExpModal2Component,
+    SkillsComponent,
+    ProyectsComponent,
+    NavButtonsComponent,
   ],
   imports: [
     BrowserModule,

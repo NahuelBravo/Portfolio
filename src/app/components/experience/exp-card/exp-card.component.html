@@ -1,0 +1,40 @@
+<div class="d-flex row justify-content-around align-items-center">
+    <app-exp-modal
+      (onAddExperience)="addExperience($event)"
+      class="col-12 d-flex justify-content-center"
+    ></app-exp-modal>
+
+    <div
+      id="sub-container"
+      *ngFor="let experience of experience"
+      class="col-12 col-md-5"
+    >
+      <div id="container-buttons" class="d-flex justify-content-center">
+        <div id="sub-container-buttons">
+          <app-exp-modal2 class="col-6"></app-exp-modal2>
+          <app-delete-button
+            class="col-6"
+            (click)="onDelete(experience)"
+          ></app-delete-button>
+        </div>
+      </div>
+      <div
+        id="card-container"
+        class="container d-flex align-items-center justify-content-center"
+      >
+        <div class="col-3">
+          <img id="logo-lugar" [src]="experience.img" class="img-fluid" />
+        </div>
+        <div class="col-8">
+          <div id="information">
+            <h3>{{ experience.companie }}</h3>
+            <p>{{ experience.position }}</p>
+            <p id="anios">
+              <strong>{{ experience.start }} - {{ experience.end }}</strong>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,60 @@
+<app-add-button type="button"  data-bs-toggle="modal"
+data-bs-target="#experienceModal"></app-add-button>
+
+
+<div
+  class="modal fade"
+  id="experienceModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content"
+    [ngStyle]="{
+      'background-image': 'url(' + background + ')',
+      'background-size': '100% 100%',
+      'background-attachment': 'fixed'
+    }">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+
+       <!---->
+      <form (ngSubmit)="submitExperience()">
+
+
+        <div class="modal-body d-flex row justify-content-betwen">
+  
+          <label for="logo">Logo del Establecimiento/Lugar:</label>
+          <input type="text" name="logo" id="Logo"  placeholder="Logo del Establecimiento/Lugar" required [(ngModel)]="img"/>
+  
+          <label for="name">Nombre del Establecimiento/Lugar:</label>
+          <input type="text" name="name" id="name" placeholder="Nombre del Establecimiento/Lugar" required [(ngModel)]="companie"/> 
+          
+          <label for="title">Posicion (Trabajo):</label>
+          <input type="text" name="title" id="title"  placeholder="Posicion (Trabajo)" required [(ngModel)]="position"/> 
+
+          <label for="start">Comienzo:</label>>
+          <input type="date" name="start" id="start"  placeholder="Comienzo" required [(ngModel)]="start"/>  
+
+          <label for="end">Final:</label>
+          <input type="date" name="end" id="end"  placeholder="Final" [(ngModel)]="end"/>   
+
+        </div>
+
+        <div class="modal-footer">
+          <input type="submit" value="Guardar" class="btn btn-outline-warning">
+        </div>
+      </form>
+
+       <!---->
+    </div>
+  </div>
+</div>

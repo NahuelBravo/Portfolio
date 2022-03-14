@@ -64,4 +64,13 @@ export class GeneralServiceService {
   getExperience(): Observable<Experience[]>{
     return this.http.get<Experience[]>(this.urlExperience);
   }
+
+  deleteExperience(experience: Experience):Observable<Experience>{
+    const url = `${this.urlExperience}/${experience.id}`
+    return this.http.delete<Experience>(url)
+  }
+
+  addExperience(experience: Experience): Observable<Experience>{
+    return this.http.post<Experience>(this.urlExperience, experience,httpOptions);
+  }
 }
