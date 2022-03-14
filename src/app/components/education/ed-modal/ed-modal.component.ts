@@ -1,3 +1,4 @@
+import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 import { Education } from '../../../interfaces/education';
@@ -9,7 +10,7 @@ import { Education } from '../../../interfaces/education';
 })
 export class EdModalComponent implements OnInit {
 
-  @Output() editEducation: EventEmitter<Education> = new EventEmitter;
+  @Output() onAddEducation: EventEmitter<Education> = new EventEmitter;
 
   id: any;
   school: string = "";
@@ -18,14 +19,15 @@ export class EdModalComponent implements OnInit {
   start: string = "";
   end: string = "";
   background = "assets/Img/background-image-modal.jpg";
-
-
   constructor() { }
 
   ngOnInit(): void {
   }
 
   submitEducation(){
+    const {id, school, img, title, start, end} = this 
+    const newEducation = {id, school, img, title, start, end}
 
+    this.onAddEducation.emit(newEducation);
   }
 }

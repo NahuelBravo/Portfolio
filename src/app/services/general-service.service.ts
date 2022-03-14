@@ -20,6 +20,9 @@ const httpOptions = {
 
 export class GeneralServiceService {
 
+
+
+
   /* Api Url */
   private urlHeader = "http://localhost:5002/header";
   private urlAbout = "http://localhost:5002/about";
@@ -47,6 +50,14 @@ export class GeneralServiceService {
   /* Education */
   getEducation(): Observable<Education[]>{
     return this.http.get<Education[]>(this.urlEducation);
+  }
+  deleteEducation(education: Education):Observable<Education>{
+    const url = `${this.urlEducation}/${education.id}`
+    return this.http.delete<Education>(url)
+  }
+
+  addEducation(education: Education): Observable<Education>{
+    return this.http.post<Education>(this.urlEducation, education,httpOptions);
   }
 
   /* Experience */
