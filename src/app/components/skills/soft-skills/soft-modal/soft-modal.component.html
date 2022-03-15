@@ -1,0 +1,56 @@
+<app-add-button type="button"  data-bs-toggle="modal"
+data-bs-target="#softModal"></app-add-button>
+
+
+<div
+  class="modal fade"
+  id="softModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content"
+    [ngStyle]="{
+      'background-image': 'url(' + background + ')',
+      'background-size': '100% 100%',
+      'background-attachment': 'fixed'
+    }">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Hard Skill</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+
+       <!---->
+      <form (ngSubmit)="submitHardSkill()">
+
+
+        <div class="modal-body d-flex row justify-content-betwen">
+  
+          <label for="logo">Logo Tecnologia:</label>
+          <input type="text" name="logo" id="Logo"  placeholder="Logo Tecnologia" required [(ngModel)]="img"/>
+  
+          <label for="name">Nombre Tecnologia:</label>
+          <input type="text" name="name" id="name" placeholder="Nombre Tecnologia" required [(ngModel)]="text"/> 
+          
+          <label for="title">Nivel (1-100):</label>
+          <input type="text" name="title" id="title"  placeholder="Nivel" required [(ngModel)]="pct"/> 
+
+        </div>
+
+        <div class="modal-footer">
+          <input type="submit" value="Guardar" class="btn btn-outline-warning">
+        </div>
+      </form>
+
+       <!---->
+    </div>
+  </div>
+</div>
+
+

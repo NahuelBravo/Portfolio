@@ -1,0 +1,28 @@
+
+<div id="main-container" class="d-flex row justify-content-around align-items-center">
+    <div id="header" class="d-flex justify-content-around align-items-center">    
+        <h2>{{title}}</h2>
+    <app-hard-modal
+    (onAddHardSkill)="addHardSkill($event)"
+></app-hard-modal>
+</div>
+    <div id="sub-container" 
+    class="d-flex row justify-content-center align-items-center col-6 col-sm-4 col-md-3"
+    *ngFor="let  hardSkill of  hardSkill">
+    <div id="buttons"class="d-flex justify-content-end">
+        <app-edit-button></app-edit-button>
+        <app-delete-button (click)="onDelete( hardSkill)"></app-delete-button>
+    </div>
+        <div class="d-flex row col-12 justify-content-around align-items-center">
+            <div id="img-container"class="col-3 d-flex justify-content-center align-items-center">
+                <img class="img-fluid" [src]=" hardSkill.img"> 
+            </div>
+            <div class="col-9 d-flex justify-content-center align-items-center">
+                <strong>{{ hardSkill.text}}</strong>
+            </div>
+        </div>
+        <div id="progress" class="progress">
+            <div class="progress-bar" role="progressbar" [ngStyle]="{'width':  hardSkill.pct + '%'}" aria-valuenow="" aria-valuemin="0" aria-valuemax="100">{{ hardSkill.pct}}%</div>
+        </div>
+    </div>
+</div>

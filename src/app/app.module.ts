@@ -30,6 +30,15 @@ import { ExpModalComponent } from './components/experience/exp-modal/exp-modal.c
 import { ExpModal2Component } from './components/experience/exp-modal2/exp-modal2.component';
 import { SkillsComponent } from './components/skills/skills.component';
 import { ProyectsComponent } from './components/proyects/proyects.component';
+import { HardSkillsComponent } from './components/skills/hard-skills/hard-skills.component';
+import { SoftSkillsComponent } from './components/skills/soft-skills/soft-skills.component';
+import { HardCardComponent } from './components/skills/hard-skills/hard-card/hard-card.component';
+import { SoftCardComponent } from './components/skills/soft-skills/soft-card/soft-card.component';
+import { SkillsModalComponent } from './components/skills/skills-modal/skills-modal.component';
+import { ProyCardComponent } from './components/proyects/proy-card/proy-card.component';
+import { ProyModalComponent } from './components/proyects/proy-modal/proy-modal.component';
+import { HardModalComponent } from './components/skills/hard-skills/hard-modal/hard-modal.component';
+import { SoftModalComponent } from './components/skills/soft-skills/soft-modal/soft-modal.component';
 
 
 @NgModule({
@@ -54,6 +63,15 @@ import { ProyectsComponent } from './components/proyects/proyects.component';
     SkillsComponent,
     ProyectsComponent,
     NavButtonsComponent,
+    HardSkillsComponent,
+    SoftSkillsComponent,
+    HardCardComponent,
+    SoftCardComponent,
+    SkillsModalComponent,
+    ProyCardComponent,
+    ProyModalComponent,
+    HardModalComponent,
+    SoftModalComponent,
   ],
   imports: [
     BrowserModule,

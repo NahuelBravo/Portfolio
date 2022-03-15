@@ -1,0 +1,37 @@
+#main-container{
+    margin: 0;
+    padding: 0;
+}
+#header{
+    background-color: var(--background-primary);
+    color: var(--font-color-white);
+    border-radius: 0.5em;
+    margin: 1em;
+    padding: 0;
+}
+
+#sub-container{
+    background-color: var(--background-primary);
+    color: var(--font-color-white);
+    border-radius: 0.5em;
+    margin: 1em;
+    padding: 0;
+}
+
+#buttons{
+    padding: 0;
+}
+
+#img-container{
+    padding: 0;
+}
+
+strong{
+    color: var(--font-color-pink);
+}
+
+#progress{
+    margin-top: 1em;
+    padding: 0;
+    height: 2em;
+}
