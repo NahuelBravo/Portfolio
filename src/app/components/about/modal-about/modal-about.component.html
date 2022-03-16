@@ -21,7 +21,7 @@
       }"
     >
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">About</h5>
+        <h2 class="modal-title" id="exampleModalLabel">About</h2>
         <button
           type="button"
           class="btn-close"
@@ -32,19 +32,26 @@
 
       <!---->
 
-      <form (ngSubmit)="submitAbout()">
+      <form [formGroup]="form" (ngSubmit)="submitAbout($event)">
         <div class="modal-body d-flex row justify-content-betwen">
-          <label for="profileImg">Imagen de Perfil:</label>
+          <label for="profileImg"><strong>Imagen de Perfil:</strong></label>
           <input
+            formControlName="profileImg"
             type="text"
             name="profileImg"
             id="profileImg"
             placeholder="URL Imagen"
             [(ngModel)]="profileImg"
           />
+          <div class="errors" *ngIf="ProfileImg?.errors && ProfileImg?.touched">
+            <p *ngIf="ProfileImg?.hasError('required')" class="error">
+              <strong>Imagen de perfil es requerida.</strong>
+            </p>
+          </div>
 
-          <label for="position">Posicion (Trabajo):</label>
+          <label for="position"><strong>Posicion (Trabajo):</strong></label>
           <input
+            formControlName="position"
             type="text"
             spellcheck="true"
             name="position"
@@ -53,8 +60,15 @@
             [(ngModel)]="position"
           />
 
-          <label for="text">Acerca De:</label>
+          <div class="errors" *ngIf="Position?.errors && Position?.touched">
+            <p *ngIf="Position?.hasError('required')" class="error">
+              <strong>Posicion (Trabajo) es requerido.</strong>
+            </p>
+          </div>
+
+          <label for="text"><strong>Acerca De:</strong></label>
           <input
+            formControlName="text"
             type="text"
             spellcheck="true"
             name="text"
@@ -64,6 +78,12 @@
           />
         </div>
 
+        <div class="errors" *ngIf="Text?.errors && Text?.touched">
+          <p *ngIf="Text?.hasError('required')" class="error">
+            <strong>Acerca de es requerido.</strong>
+          </p>
+        </div>
+
         <div class="modal-footer">
           <button type="submit" class="btn btn-warning">
             <strong>Guardar</strong>
@@ -71,7 +91,6 @@
         </div>
       </form>
 
-      <!---->
     </div>
   </div>
 </div>

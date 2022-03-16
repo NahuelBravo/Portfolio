@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 import { AppComponent } from './app.component';
@@ -19,10 +19,6 @@ import { EdModalComponent } from './components/education/ed-modal/ed-modal.compo
 import { DeleteButtonComponent } from './components/buttons/delete-button/delete-button.component';
 import { EdModal2Component } from './components/education/ed-modal2/ed-modal2.component';
 import { NavButtonsComponent } from './components/buttons/nav-buttons/nav-buttons.component';
-
-//* icons
-import { faLinkedin as faLinkedin ,faGithubSquare as faGithubSquare  } from '@fortawesome/free-brands-svg-icons';
-import { faSignInAlt as faSignInAlt} from '@fortawesome/free-solid-svg-icons';
 import { AddButtonComponent } from './components/buttons/add-button/add-button.component';
 import { ExperienceComponent } from './components/experience/experience.component';
 import { ExpCardComponent } from './components/experience/exp-card/exp-card.component';
@@ -85,7 +81,4 @@ import { SoftModalComponent } from './components/skills/soft-skills/soft-modal/s
   bootstrap: [AppComponent]
 })
 export class AppModule { 
-  constructor( library: FaIconLibrary){
-    library.addIcons(faGithubSquare,faLinkedin, faSignInAlt)
-  }
 }

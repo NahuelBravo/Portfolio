@@ -1,4 +1,4 @@
-<div class="d-flex row justify-content-around align-items-center">
+<div class="d-flex row justify-content-center justify-content-md-around align-items-center">
   <app-ed-modal
     (onAddEducation)="addEducation($event)"
     class="col-12 d-flex justify-content-center"
@@ -6,7 +6,7 @@
   <div
     id="sub-container"
     *ngFor="let education of education"
-    class="col-12 col-md-5"
+    class="d-flex flex-column col-12 col-md-5 align-items-center"
   >
     <div id="container-buttons" class="d-flex justify-content-center">
       <div id="sub-container-buttons">

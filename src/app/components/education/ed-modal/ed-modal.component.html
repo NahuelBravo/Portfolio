@@ -26,23 +26,60 @@ data-bs-target="#educationModal"></app-add-button>
         ></button>
       </div>
 
-      <form (ngSubmit)="submitEducation()">
+      <form [formGroup]="form" (ngSubmit)="submitEducation($event)">
         <div class="modal-body d-flex row justify-content-betwen">
   
-          <label for="logo"><strong>Logo del Establecimiento/Lugar:</strong></label>
-          <input type="text" name="logo" id="Logo"  placeholder="Logo del Establecimiento/Lugar" required [(ngModel)]="img"/>
+          <label for="logo">
+            <strong>Logo del Establecimiento/Lugar:</strong>
+          </label>
+          <input 
+          formControlName="img"
+          type="text" 
+          name="logo" 
+          id="Logo"  
+          placeholder="Logo del Establecimiento/Lugar" 
+          [(ngModel)]="img"/>
   
-          <label for="name"><strong>Nombre del Establecimiento/Lugar:</strong></label>
-          <input type="text" name="name" id="name" placeholder="Nombre del Establecimiento/Lugar" required [(ngModel)]="school"/> 
+          <label for="name">
+            <strong>Nombre del Establecimiento/Lugar:</strong>
+          </label>
+          <input 
+          formControlName="school"
+          type="text" 
+          name="name" 
+          id="name" 
+          placeholder="Nombre del Establecimiento/Lugar" 
+          [(ngModel)]="school"/> 
           
-          <label for="title"><strong>Título/Carrera:</strong></label>
-          <input type="text" name="title" id="title"  placeholder="Titulo/Carrera" required [(ngModel)]="title"/> 
+          <label for="title">
+            <strong>Título/Carrera:</strong>
+          </label>
+          <input 
+          formControlName="title"
+          type="text" 
+          name="title" id="title"  
+          placeholder="Titulo/Carrera"
+          [(ngModel)]="title"/> 
 
-          <label for="start"><strong>Comienzo:</strong></label>
-          <input type="number" min="1900" max="2099" step="1" value="2016" name="start" id="start" required [(ngModel)]="start"/>  
+          <label for="start">
+            <strong>Comienzo:</strong>
+          </label>
+          <input 
+          formControlName="start"
+          type="number" 
+          name="start" 
+          id="start" 
+          [(ngModel)]="start"/>  
 
-          <label for="end"><strong>Final:</strong></label>
-          <input type="number" min="1900" max="2099" step="1" value="2016" name="end" id="end" required [(ngModel)]="end"/>   
+          <label for="end">
+            <strong>Final:</strong>
+          </label>
+          <input 
+          formControlName="end"
+          type="number" 
+          name="end" 
+          id="end" 
+          [(ngModel)]="end"/>   
 
         </div>
 

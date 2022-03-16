@@ -11,6 +11,7 @@ import { faSignInAlt} from '@fortawesome/free-solid-svg-icons';
 export class LoginModalComponent implements OnInit {
 
   form: FormGroup;
+  
   signIn = faSignInAlt
   background = "assets/Img/background-image-modal.jpg";
 

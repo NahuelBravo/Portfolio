@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { Education } from '../../../interfaces/education';
 
 @Component({
@@ -7,8 +8,10 @@ import { Education } from '../../../interfaces/education';
   styleUrls: ['./ed-modal.component.css']
 })
 export class EdModalComponent implements OnInit {
-
   @Output() onAddEducation: EventEmitter<Education> = new EventEmitter;
+  background = "assets/Img/background-image-modal.jpg";
+  form: FormGroup;
+  
 
   id: any;
   school!: string;
@@ -16,33 +19,46 @@ export class EdModalComponent implements OnInit {
   title!: string;
   start!: number;
   end!: number | string;
-  background = "assets/Img/background-image-modal.jpg";
-  constructor() { }
+  
+  constructor(private formBuilder: FormBuilder) { 
+
+    this.form = this.formBuilder.group({
+      img:['', []],
+      school: ['',[Validators.required]],
+      title:['', [Validators.required]],
+      start:['', [Validators.required,Validators.min(1950),Validators.max(2022)]],
+      end: ['',[Validators.min(1950)]],
+    })
+  }
 
   ngOnInit(): void {
   }
 
-  submitEducation(){
-    if(this.school.length === 0){
-      alert("Establecimiento necesario")
-    }
-    if(this.title.length === 0){
-      alert("Titulo/Carrera necesario");
-    }
-    if(this.start === 0){
-      alert("Año de comienzo necesario");
-    }
-    if( this.start < 1900 ){
-      alert("Año de comienzo invalido");
-    }
-    if(this.end === 0 && this.school.length === 0 || this.title.length === 0 || this.start === 0 || this.start < 1900 ){
-      alert("Revise el Formulario");
-    }else{
-      this.end = "Presente";
-    }
-    const {id, school, img, title, start, end} = this 
-    const newEducation = {id, school, img, title, start, end}
+  get School(){
+    return this.form.get("school");
+  }
 
-    this.onAddEducation.emit(newEducation);
+  get Title (){
+    return this.form.get("title");
+  }
+
+  get Start(){
+    return this.form.get("start");
+  }
+
+  get End (){
+    return this.form.get("end");
+  }
+
+  submitEducation(event: Event){
+
+    if(this.form.valid && this.start === this.end){
+      this.end = "Presente"
+      const {id, school, img, title, start, end} = this; 
+      const newEducation = {id, school, img, title, start, end}
+      this.onAddEducation.emit(newEducation);
+    }else{
+      alert("Campos Invalidos")
+    }
   }
 }
