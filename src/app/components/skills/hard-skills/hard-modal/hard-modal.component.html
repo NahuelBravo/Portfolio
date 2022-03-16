@@ -17,7 +17,7 @@ data-bs-target="#hardModal"></app-add-button>
       'background-attachment': 'fixed'
     }">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Hard Skill</h5>
+        <h2 class="modal-title" id="exampleModalLabel"><strong>Hard Skill</strong></h2>
         <button
           type="button"
           class="btn-close"
@@ -32,19 +32,21 @@ data-bs-target="#hardModal"></app-add-button>
 
         <div class="modal-body d-flex row justify-content-betwen">
   
-          <label for="logo">Logo Tecnologia:</label>
+          <label for="logo"><strong>Logo Tecnologia:</strong></label>
           <input type="text" name="logo" id="Logo"  placeholder="Logo Tecnologia" required [(ngModel)]="img"/>
   
-          <label for="name">Nombre Tecnologia:</label>
+          <label for="name"><strong>Nombre Tecnologia:</strong></label>
           <input type="text" name="name" id="name" placeholder="Nombre Tecnologia" required [(ngModel)]="text"/> 
           
-          <label for="title">Nivel (1-100):</label>
+          <label for="title"><strong>Nivel (1-100):</strong></label>
           <input type="text" name="title" id="title"  placeholder="Nivel" required [(ngModel)]="pct"/> 
 
         </div>
 
         <div class="modal-footer">
-          <input type="submit" value="Guardar" class="btn btn-outline-warning">
+          <button type="submit" class="btn btn-warning">
+            <strong>Guardar</strong>
+          </button>
         </div>
       </form>
 

@@ -9,6 +9,8 @@ import { Education } from '../interfaces/education';
 import { Experience } from '../interfaces/experience';
 import { HardSkill } from '../interfaces/hardSkill';
 import { SoftSkill } from '../interfaces/softSkill';
+import { Proyect } from '../interfaces/proyect';
+
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type':'application/json'
@@ -31,7 +33,7 @@ export class GeneralServiceService {
   private urlExperience = "http://localhost:5002/experience";
   private urlHardSkill = "http://localhost:5002/hardSkill";
   private urlSoftSkill = "http://localhost:5002/softSkill";
-  
+  private urlProyects = "http://localhost:5002/proyects";
 
   constructor(private http:HttpClient) { }
 
@@ -101,5 +103,18 @@ export class GeneralServiceService {
   deleteSoftSkill(softSkill: SoftSkill): Observable<SoftSkill>{
     const url = `${this.urlSoftSkill}/${softSkill.id}`
     return this.http.delete<SoftSkill>(url);
+  }
+
+  //*Proyects
+  getProyects(): Observable<Proyect[]>{
+    return this.http.get<Proyect[]>(this.urlProyects);
+  }
+
+  addProyect(proyect: Proyect): Observable<Proyect>{
+    return this.http.post<Proyect>(this.urlProyects, proyect, httpOptions)
+  }
+  deleteProyect(proyect: Proyect): Observable<Proyect>{
+    const url = `${this.urlProyects}/${proyect.id}`
+    return this.http.delete<Proyect>(url);
   }
 }

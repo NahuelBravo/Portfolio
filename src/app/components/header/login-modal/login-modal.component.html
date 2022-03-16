@@ -26,9 +26,9 @@
       }"
     >
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">
+        <h2 class="modal-title" id="exampleModalLabel">
           <strong>Login</strong>
-        </h5>
+        </h2>
         <button
           type="button"
           class="btn-close"
@@ -39,7 +39,6 @@
 
       <form [formGroup]="form" (ngSubmit)="onEnviar($event)" action="#">
         <div class="modal-body d-flex row justify-content-betwen">
-          <div>
             <label for="email">
               <strong>Email:</strong>
             </label>
@@ -49,7 +48,6 @@
               placeholder="Email"
               required
             />
-          </div>
 
           <div *ngIf="Mail?.errors && Mail?.touched">
             <p *ngIf="Mail?.hasError('required')" class="error">
@@ -60,7 +58,6 @@
             </p>
           </div>
 
-          <div>
             <label for="password" class="form-label">
               <strong>Contraseña:</strong>
             </label>
@@ -70,7 +67,7 @@
               placeholder="Contraseña"
               required
             />
-          </div>
+
 
           <div *ngIf="Password?.errors && Password?.touched">
             <p *ngIf="Password?.hasError('required')" class="error">
@@ -82,7 +79,7 @@
           </div>
         </div>
         <div class="modal-footer">
-          <button type="submit" class="btn btn-outline-warning">
+          <button type="submit" class="btn btn-warning">
             <strong>Sign In</strong>
           </button>
         </div>

@@ -1,5 +1,11 @@
-.modal-content{
-    color: var(--font-color-white);
+.modal{
+    color: var(--font-color-pink);
+    font-size: 1.2em;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+h2{
+    color: var(--font-color-yellow);
 }
 
 p{

@@ -1,16 +1,17 @@
 
 <div id="main-container" class="d-flex row justify-content-around align-items-center">
-    <div id="header" class="d-flex justify-content-around align-items-center">    
+    <div id="header" class="d-flex justify-content-center align-items-center">
+        <div id="sub-header"class="d-flex justify-content-around align-items-center">  
         <h2>{{title}}</h2>
     <app-hard-modal
     (onAddHardSkill)="addHardSkill($event)"
 ></app-hard-modal>
+</div> 
 </div>
     <div id="sub-container" 
     class="d-flex row justify-content-center align-items-center col-6 col-sm-4 col-md-3"
     *ngFor="let  hardSkill of  hardSkill">
     <div id="buttons"class="d-flex justify-content-end">
-        <app-edit-button></app-edit-button>
         <app-delete-button (click)="onDelete( hardSkill)"></app-delete-button>
     </div>
         <div class="d-flex row col-12 justify-content-around align-items-center">

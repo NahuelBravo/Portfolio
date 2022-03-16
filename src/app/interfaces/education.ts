@@ -3,6 +3,6 @@ export interface Education{
     school: string;
     img: string;
     title: string;
-    start: string;
-    end: string;
+    start: number ;
+    end: number | string;
 }

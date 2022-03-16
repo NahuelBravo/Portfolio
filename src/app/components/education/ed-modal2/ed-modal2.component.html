@@ -1,10 +1,10 @@
 <app-edit-button type="button"  data-bs-toggle="modal"
-data-bs-target="#educationModal"></app-edit-button>
+data-bs-target="#educationModal2"></app-edit-button>
 
 
 <div
   class="modal fade"
-  id="educationModal"
+  id="educationModal2"
   tabindex="-1"
   aria-labelledby="exampleModalLabel"
   aria-hidden="true"
@@ -17,7 +17,7 @@ data-bs-target="#educationModal"></app-edit-button>
       'background-attachment': 'fixed'
     }">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+        <h2 class="modal-title" id="exampleModalLabel"><strong>Educación</strong></h2>
         <button
           type="button"
           class="btn-close"
@@ -26,35 +26,33 @@ data-bs-target="#educationModal"></app-edit-button>
         ></button>
       </div>
 
-       <!---->
       <form (ngSubmit)="submitEducation()">
-
-
         <div class="modal-body d-flex row justify-content-betwen">
   
-          <label for="logo">Logo del Establecimiento/Lugar:</label>
+          <label for="logo"><strong>Logo del Establecimiento/Lugar:</strong></label>
           <input type="text" name="logo" id="Logo"  placeholder="Logo del Establecimiento/Lugar" required [(ngModel)]="img"/>
   
-          <label for="name">Nombre del Establecimiento/Lugar:</label>
+          <label for="name"><strong>Nombre del Establecimiento/Lugar:</strong></label>
           <input type="text" name="name" id="name" placeholder="Nombre del Establecimiento/Lugar" required [(ngModel)]="school"/> 
           
-          <label for="title">Titulo/Carrera:</label>
+          <label for="title"><strong>Título/Carrera:</strong></label>
           <input type="text" name="title" id="title"  placeholder="Titulo/Carrera" required [(ngModel)]="title"/> 
 
-          <label for="start">Comienzo:</label>>
-          <input type="date" name="start" id="start"  placeholder="Comienzo" required [(ngModel)]="start"/>  
+          <label for="start"><strong>Comienzo:</strong></label>
+          <input type="number" min="1900" max="2099" step="1" value="2016" name="start" id="start" required [(ngModel)]="start"/>  
 
-          <label for="end">Final:</label>
-          <input type="date" name="end" id="end"  placeholder="Final" [(ngModel)]="end"/>   
+          <label for="end"><strong>Final:</strong></label>
+          <input type="number" min="1900" max="2099" step="1" value="2016" name="end" id="end" required [(ngModel)]="end"/>   
 
         </div>
 
         <div class="modal-footer">
-          <input type="submit" value="Guardar" class="btn btn-outline-warning">
+          <button type="submit" class="btn btn-warning">
+            <strong>Guardar</strong>
+          </button>
         </div>
       </form>
 
-       <!---->
     </div>
   </div>
 </div>

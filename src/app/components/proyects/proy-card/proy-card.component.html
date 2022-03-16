@@ -1,1 +1,39 @@
-<p>proy-card works!</p>
+<div class="d-flex row justify-content-around align-items-center">
+    <app-proy-modal
+    (onAddProyect)="addProyect($event)"
+      class="col-12 d-flex justify-content-center"
+    ></app-proy-modal>
+    <div
+      id="sub-container"
+    *ngFor="let proyect of proyects"
+      class="col-12 col-md-5"
+    >
+      <div id="container-buttons" class="d-flex justify-content-center">
+        <div id="sub-container-buttons">
+          <app-ed-modal2 class="col-6"></app-ed-modal2>
+          <app-delete-button
+           (click)="onDelete(proyect)"
+            class="col-6"
+          ></app-delete-button>
+        </div>
+      </div>
+      <div
+        id="card-container"
+        class="container row d-flex align-items-center justify-content-center"
+      >
+        <div class="col-12">
+          <img id="logo-lugar" [src]="proyect.img" class="img-fluid" />
+        </div>
+        <div class="col-12 d-flex justify-content-center align-items-center">
+          <div id="information">
+            <h3>{{ proyect.name }}</h3>
+            <p>{{ proyect.info }}</p>
+            <p id="anios">
+            <strong>{{ proyect.start }} - {{ proyect.end }}</strong>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

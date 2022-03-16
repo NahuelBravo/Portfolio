@@ -1,1 +1,60 @@
-<p>proy-modal works!</p>
+<app-add-button type="button"  data-bs-toggle="modal"
+data-bs-target="#proyectModal"></app-add-button>
+
+
+<div
+  class="modal fade"
+  id="proyectModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content"
+    [ngStyle]="{
+      'background-image': 'url(' + background + ')',
+      'background-size': '100% 100%',
+      'background-attachment': 'fixed'
+    }">
+      <div class="modal-header">
+        <h2 class="modal-title" id="exampleModalLabel"><strong>Proyecto</strong></h2>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+
+       <!---->
+      <form (ngSubmit)="submitProyect()">
+        <div class="modal-body d-flex row justify-content-betwen">
+  
+          <label for="logo"><strong>Imagen del Proyect:</strong></label>
+          <input type="text" name="logo" id="Logo"  placeholder="Imagen del Proyect" required [(ngModel)]="img"/>
+  
+          <label for="name"><strong>Nombre del Proyecto:</strong></label>
+          <input type="text" name="name" id="name" placeholder="Nombre del Proyect" required [(ngModel)]="name"/> 
+          
+          <label for="title"><strong>Info del Proyecto:</strong></label>
+          <input type="text" name="title" id="title"  placeholder="info del Proyec" required [(ngModel)]="info"/> 
+
+          <label for="start"><strong>Comienzo:</strong></label>>
+          <input type="date" name="start" id="start"  placeholder="Comienzo" required [(ngModel)]="start"/>  
+
+          <label for="end"><strong>Final:</strong></label>
+          <input type="date" name="end" id="end"  placeholder="Final" [(ngModel)]="end"/>   
+
+        </div>
+
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-warning">
+            <strong>Guardar</strong>
+          </button>
+        </div>
+      </form>
+
+       <!---->
+    </div>
+  </div>
+</div>
