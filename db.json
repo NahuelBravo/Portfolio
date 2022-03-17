@@ -71,50 +71,15 @@
       "pct": 55
     }
   ],
-  "softSkill": [
-    {
-      "id": 1,
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/HTML5_Badge.svg/512px-HTML5_Badge.svg.png?20110131171049",
-      "text": "HTML5",
-      "pct": 100
-    },
-    {
-      "id": 3,
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/512px-Unofficial_JavaScript_logo_2.svg.png",
-      "text": "Javascript",
-      "pct": 20
-    },
-    {
-      "id": 4,
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/512px-Typescript_logo_2020.svg.png",
-      "text": "Typecript",
-      "pct": 50
-    }
-  ],
+  "softSkill": [],
   "proyects": [
     {
-      "id": 1,
-      "img": "akshfklhasklhfla",
-      "name": "aslhfklahsklfhas",
-      "info": "akhfsklhasklfhlas",
-      "start": "akjsfklhaslfha",
-      "end": "klahsfklhalsfh"
-    },
-    {
-      "id": 4,
-      "img": "akshfklhasklhfla",
-      "name": "aslhfklahsklfhas",
-      "info": "akhfsklhasklfhlas",
-      "start": "akjsfklhaslfha",
-      "end": "klahsfklhalsfh"
-    },
-    {
-      "name": "rwqrqw",
-      "img": "rwqrqwr",
-      "info": "rqwrqwrqwr",
-      "start": "2022-03-09",
-      "end": "2022-03-25",
-      "id": 5
+      "name": "C.P.E.M N° 80",
+      "img": "rqwrqw",
+      "info": "rewrqewrq",
+      "start": 1951,
+      "end": 1951,
+      "id": 6
     }
   ]
 }

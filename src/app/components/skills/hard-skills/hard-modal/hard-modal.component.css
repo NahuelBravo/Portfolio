@@ -14,3 +14,8 @@ p{
 input{
     margin-bottom: 0.8em;
 }
+
+.errors{
+    color: red;
+    font-size: 0.9em;
+}

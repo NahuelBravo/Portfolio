@@ -27,19 +27,47 @@ data-bs-target="#softModal"></app-add-button>
       </div>
 
        <!---->
-      <form (ngSubmit)="submitHardSkill()">
+      <form [formGroup]="form" (ngSubmit)="submitHardSkill($event)">
 
 
         <div class="modal-body d-flex row justify-content-betwen">
   
-          <label for="logo"><strong>Logo Tecnologia:</strong></label>
-          <input type="text" name="logo" id="Logo"  placeholder="Logo Tecnologia" required [(ngModel)]="img"/>
+          <label for="img"><strong>Imagen representativa de la habilidad:</strong></label>
+          <input 
+          formControlName="img"
+          type="text"
+          name="img" 
+          id="img"  
+          placeholder="Imagen representativa de la habilidad" 
+          [(ngModel)]="img"/>
   
-          <label for="name"><strong>Nombre Tecnologia:</strong></label>
-          <input type="text" name="name" id="name" placeholder="Nombre Tecnologia" required [(ngModel)]="text"/> 
-          
-          <label for="title"><strong>Nivel (1-100):</strong></label>
-          <input type="text" name="title" id="title"  placeholder="Nivel" required [(ngModel)]="pct"/> 
+          <label for="text"><strong>Nombre Habildad:</strong></label>
+          <input 
+          formControlName="text"
+          type="text" 
+          name="text"
+          id="text" 
+          placeholder="Nombre Habildad"
+          [(ngModel)]="text"/> 
+          <div class="errors" *ngIf="Text?.errors && Text?.touched">
+            <p *ngIf="Text?.hasError('required')" class="error">
+              <strong>Nombre de la habilidad requerido.</strong>
+            </p>
+          </div>
+
+          <label for="pct"><strong>Porcentaje de habilidad (1-100):</strong></label>
+          <input 
+          formControlName="pct"
+          type="number" 
+          name="pct" 
+          id="pct" 
+          [(ngModel)]="pct"/> 
+
+          <div class="errors" *ngIf="Pct?.errors && Pct?.touched">
+            <p *ngIf="Pct?.hasError('required')" class="error">
+              <strong>Porcentaje de habilidad requerido.</strong>
+            </p>
+          </div>
 
         </div>
 

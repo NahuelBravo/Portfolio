@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter} from '@angular/core';
+import { FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { Proyect } from 'src/app/interfaces/proyect';
 
 @Component({
@@ -8,25 +9,45 @@ import { Proyect } from 'src/app/interfaces/proyect';
 })
 export class ProyModalComponent implements OnInit {
   @Output() onAddProyect: EventEmitter<Proyect> = new EventEmitter;
+  background = "assets/Img/background-image-modal.jpg";
+  form: FormGroup;
 
   id: any;
-  name: string = "";
-  img: string = "";
-  info: string = "";
-  start: string = "";
-  end: string = "";
-  background = "assets/Img/background-image-modal.jpg";
+  name!: string;
+  img!: string;
+  info!: string;
+  start!: string;
+  end!: string;
+  
 
-  constructor() { }
+  constructor(private formBuilder: FormBuilder) { 
+    this.form = this.formBuilder.group({
+      img:['', []],
+      name: ['',[Validators.required]],
+      info:['', [Validators.required]],
+      start:['', [Validators.required,Validators.min(1950)]],
+      end: ['',[Validators.min(1950)]],
+    })
+  }
 
   ngOnInit(): void {
   }
 
-  submitProyect(){
-    const {id, name, img, info, start, end} = this 
-    const newProyect = {id, name, img, info, start, end}
-
-    this.onAddProyect.emit(newProyect);
+  submitProyect(event: Event){
+    if(this.form.valid && this.start > this.end){
+      alert("Comienzo no puede ser menor que Final")
+    }else if(this.form.valid && this.end === "" || 0 || undefined){
+      this.end = "Presente"
+      const {id, name, img, info, start, end} = this; 
+      const newProyect = {id, name, img, info, start, end}
+      this.onAddProyect.emit(newProyect);
+    }else if(this.form.valid){
+      const {id, name, img, info, start, end} = this; 
+      const newProyect = {id, name, img, info, start, end}
+      this.onAddProyect.emit(newProyect);
+    }else{
+      alert("Datos Invalidos. Revisar el Formulario")
+    }
   }
 
 }
