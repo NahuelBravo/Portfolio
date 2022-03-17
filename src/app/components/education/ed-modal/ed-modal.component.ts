@@ -21,13 +21,12 @@ export class EdModalComponent implements OnInit {
   end!: number | string;
   
   constructor(private formBuilder: FormBuilder) { 
-
     this.form = this.formBuilder.group({
       img:['', []],
       school: ['',[Validators.required]],
       title:['', [Validators.required]],
-      start:['', [Validators.required,Validators.min(1950),Validators.max(2022)]],
-      end: ['',[Validators.min(1950)]],
+      start:['', [Validators.required,Validators.min(1950)]],
+      end: ['',[Validators.required,Validators.min(1950)]],
     })
   }
 
@@ -51,14 +50,20 @@ export class EdModalComponent implements OnInit {
   }
 
   submitEducation(event: Event){
-
-    if(this.form.valid && this.start === this.end){
+    if(this.form.valid && this.start > this.end){
+      alert("Comienzo no puede ser menor que Final")
+    }else if(this.form.valid && this.start === this.end){
       this.end = "Presente"
       const {id, school, img, title, start, end} = this; 
       const newEducation = {id, school, img, title, start, end}
       this.onAddEducation.emit(newEducation);
+    }else if(this.form.valid){
+      const {id, school, img, title, start, end} = this; 
+      const newEducation = {id, school, img, title, start, end}
+      this.onAddEducation.emit(newEducation);
     }else{
-      alert("Campos Invalidos")
+      alert("Datos Invalidos. Revisar el Formulario")
     }
   }
 }
+

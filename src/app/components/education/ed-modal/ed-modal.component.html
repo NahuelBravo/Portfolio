@@ -51,6 +51,12 @@ data-bs-target="#educationModal"></app-add-button>
           placeholder="Nombre del Establecimiento/Lugar" 
           [(ngModel)]="school"/> 
           
+          <div class="errors" *ngIf="School?.errors && School?.touched">
+            <p *ngIf="School?.hasError('required')" class="error">
+              <strong>Nombre del Establecimiento/Lugar es requerido.</strong>
+            </p>
+          </div>
+
           <label for="title">
             <strong>Título/Carrera:</strong>
           </label>
@@ -61,8 +67,14 @@ data-bs-target="#educationModal"></app-add-button>
           placeholder="Titulo/Carrera"
           [(ngModel)]="title"/> 
 
+          <div class="errors" *ngIf="Title?.errors && Title?.touched">
+            <p *ngIf="Title?.hasError('required')" class="error">
+              <strong>Titulo/Carrera es requerido.</strong>
+            </p>
+          </div>
+
           <label for="start">
-            <strong>Comienzo:</strong>
+            <strong>Año de inicio:</strong>
           </label>
           <input 
           formControlName="start"
@@ -71,8 +83,14 @@ data-bs-target="#educationModal"></app-add-button>
           id="start" 
           [(ngModel)]="start"/>  
 
+          <div class="errors" *ngIf="Start?.errors && Start?.touched">
+            <p *ngIf="Start?.hasError('required')" class="error">
+              <strong>Año de inicio es requerido.</strong>
+            </p>
+          </div>
+
           <label for="end">
-            <strong>Final:</strong>
+            <strong>Año de finalizacion:</strong>
           </label>
           <input 
           formControlName="end"
@@ -81,6 +99,11 @@ data-bs-target="#educationModal"></app-add-button>
           id="end" 
           [(ngModel)]="end"/>   
 
+          <div class="errors" *ngIf="End?.errors && End?.touched">
+            <p *ngIf="End?.hasError('required')" class="error">
+              <strong>Año de finalizacion es requerido.</strong>
+            </p>
+          </div>
         </div>
 
         <div class="modal-footer">

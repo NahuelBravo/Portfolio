@@ -17,7 +17,7 @@ data-bs-target="#experienceModal"></app-add-button>
       'background-attachment': 'fixed'
     }">
       <div class="modal-header">
-        <h2 class="modal-title" id="exampleModalLabel"><strong>Login</strong></h2>
+        <h2 class="modal-title" id="exampleModalLabel"><strong>Experiencia</strong></h2>
         <button
           type="button"
           class="btn-close"
@@ -27,25 +27,74 @@ data-bs-target="#experienceModal"></app-add-button>
       </div>
 
        <!---->
-      <form (ngSubmit)="submitExperience()">
-
-
+      <form [formGroup]="form" (ngSubmit)="submitExperience($event)">
         <div class="modal-body d-flex row justify-content-betwen">
+
+          <label for="img"><strong>Logo de la compania:</strong></label>
+          <input 
+          formControlName="img"
+          type="text" 
+          name="img" id="Logo"  
+          placeholder="Logo de la compania" 
+          [(ngModel)]="img"/>
   
-          <label for="logo"><strong>Logo del Establecimiento/Lugar:</strong></label>
-          <input type="text" name="logo" id="Logo"  placeholder="Logo del Establecimiento/Lugar" required [(ngModel)]="img"/>
-  
-          <label for="name"><strong>Nombre del Establecimiento/Lugar:</strong></label>
-          <input type="text" name="name" id="name" placeholder="Nombre del Establecimiento/Lugar" required [(ngModel)]="companie"/> 
+          <label for="companie"><strong>Nombre de la compania:</strong></label>
+          <input 
+          formControlName="companie"
+          type="text" 
+          name="companie" 
+          id="companie" 
+          placeholder="Nombre de la compania" 
+          [(ngModel)]="companie"/> 
+
+          <div class="errors" *ngIf="Companie?.errors && Companie?.touched">
+            <p *ngIf="Companie?.hasError('required')" class="error">
+              <strong>Nombre de la compania es requerido.</strong>
+            </p>
+          </div>
           
-          <label for="title"><strong>Posicion (Trabajo):</strong></label>
-          <input type="text" name="title" id="title"  placeholder="Posicion (Trabajo)" required [(ngModel)]="position"/> 
+          <label for="position"><strong>Posicion (Trabajo):</strong></label>
+          <input 
+          formControlName="position"
+          type="text" 
+          name="position" 
+          id="position"  
+          placeholder="Posicion (Trabajo)"
+          [(ngModel)]="position"/> 
 
-          <label for="start"><strong>Comienzo:</strong></label>
-          <input type="date" name="start" id="start"  placeholder="Comienzo" required [(ngModel)]="start"/>  
+          <div class="errors" *ngIf=" Position?.errors && Position?.touched">
+            <p *ngIf="Position?.hasError('required')" class="error">
+              <strong>Posicion (Trabajo) es requerido.</strong>
+            </p>
+          </div>
 
-          <label for="end"><strong>Final:</strong></label>
-          <input type="date" name="end" id="end"  placeholder="Final" [(ngModel)]="end"/>   
+          <label for="start"><strong>Año de inicio:</strong></label>
+          <input 
+          formControlName="start"
+          type="number" 
+          name="start" 
+          id="start"  
+          required [(ngModel)]="start"/>  
+
+          <div class="errors" *ngIf=" Start?.errors && Start?.touched">
+            <p *ngIf="Start?.hasError('required')" class="error">
+              <strong>Año de inicio es requerido.</strong>
+            </p>
+          </div>
+
+          <label for="end"><strong>Año de finalizacion:</strong></label>
+          <input 
+          formControlName="end"
+          type="number" 
+          name="end" 
+          id="end"
+          [(ngModel)]="end"/>   
+
+          <div class="errors" *ngIf=" End?.errors && End?.touched">
+            <p *ngIf="End?.hasError('required')" class="error">
+              <strong>Año de finalizacion es requerido.</strong>
+            </p>
+          </div>
 
         </div>
 

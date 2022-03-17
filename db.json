@@ -32,24 +32,7 @@
       "id": 2
     }
   ],
-  "experience": [
-    {
-      "id": 1,
-      "companie": "C.P.E.M. N° 80",
-      "img": "assets/Img/C.P.E.M-80.jpg",
-      "job": "FullSack Developer Jr.",
-      "start": "2017",
-      "end": "2019"
-    },
-    {
-      "companie": "rqwrqwrwq",
-      "img": "rqwrwqr",
-      "position": "wrqrqwr",
-      "start": "2022-03-02",
-      "end": "2022-03-03",
-      "id": 3
-    }
-  ],
+  "experience": [],
   "hardSkill": [
     {
       "id": 1,

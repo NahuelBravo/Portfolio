@@ -4,5 +4,5 @@ export interface Experience{
     img: string;
     position: string;
     start: string;
-    end: string;
+    end: string | number;
 }
