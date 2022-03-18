@@ -54,6 +54,12 @@
             [(ngModel)]="name"
           />
 
+          <div class="errors" *ngIf=" Name?.errors && Name?.touched">
+            <p *ngIf="Name?.hasError('required')" class="error">
+              <strong>Nombre del proyecto es requerido.</strong>
+            </p>
+          </div>
+
           <label for="info"><strong>Informacion del Proyecto:</strong></label>
           <input
             formControlName="info"
@@ -63,6 +69,12 @@
             placeholder="Informacion del Proyecto"
             [(ngModel)]="info"
           />
+
+          <div class="errors" *ngIf=" Info?.errors && Info?.touched">
+            <p *ngIf="Info?.hasError('required')" class="error">
+              <strong>Informacion del proyecto es requerido.</strong>
+            </p>
+          </div>
 
           <label for="start"><strong>Comienzo:</strong></label
           >
@@ -75,6 +87,12 @@
             [(ngModel)]="start"
           />
 
+          <div class="errors" *ngIf=" Start?.errors && Start?.touched">
+            <p *ngIf="Start?.hasError('required')" class="error">
+              <strong>Comienzo del proyecto es requerido.</strong>
+            </p>
+          </div>
+
           <label for="end"><strong>Final:</strong></label>
           <input
             formControlName="end"
@@ -84,6 +102,16 @@
             [(ngModel)]="end"
           />
         </div>
+
+        <label for="presente"></label
+          >
+          <input
+          formControlName="presente"
+            type="checkbox"
+            name="presente"
+            id="presente"
+            [(ngModel)]="presente"
+          />
 
         <div class="modal-footer">
           <button type="submit" class="btn btn-warning">

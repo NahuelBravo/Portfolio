@@ -4,5 +4,5 @@ export interface Proyect{
     name: string;
     info: string;
     start: string;
-    end: string;
+    end: string | number;
 }

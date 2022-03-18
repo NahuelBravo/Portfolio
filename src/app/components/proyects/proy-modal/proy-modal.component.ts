@@ -17,8 +17,8 @@ export class ProyModalComponent implements OnInit {
   img!: string;
   info!: string;
   start!: string;
-  end!: string;
-  
+  end!: string | number;
+  presente!: boolean;
 
   constructor(private formBuilder: FormBuilder) { 
     this.form = this.formBuilder.group({
@@ -27,20 +27,34 @@ export class ProyModalComponent implements OnInit {
       info:['', [Validators.required]],
       start:['', [Validators.required,Validators.min(1950)]],
       end: ['',[Validators.min(1950)]],
+      presente:['',[]]
     })
   }
 
   ngOnInit(): void {
   }
 
+  get Name(){
+    return this.form.get("name");
+  }
+
+  get Info(){
+    return this.form.get("info");
+  }
+
+  get Start(){
+    return this.form.get("start");
+  }
+
+
   submitProyect(event: Event){
-    if(this.form.valid && this.start > this.end){
-      alert("Comienzo no puede ser menor que Final")
-    }else if(this.form.valid && this.end === "" || 0 || undefined){
+    if(this.form.valid && (this.presente === true)){
       this.end = "Presente"
       const {id, name, img, info, start, end} = this; 
       const newProyect = {id, name, img, info, start, end}
       this.onAddProyect.emit(newProyect);
+    }else if(this.form.valid && (this.start > this.end)){
+      alert("Comienzo no puede ser menor que Final");
     }else if(this.form.valid){
       const {id, name, img, info, start, end} = this; 
       const newProyect = {id, name, img, info, start, end}
